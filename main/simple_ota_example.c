@@ -81,7 +81,7 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt)
 
 void hello_task(void *pvParameter)
 {
-    printf("Hello world V3!\n");
+    printf("Hello world V4!\n");
 
     /* Print chip information */
     esp_chip_info_t chip_info;
