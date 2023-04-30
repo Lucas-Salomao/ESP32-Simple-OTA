@@ -19,6 +19,7 @@
 #include "driver/gpio.h"
 #include "esp_chip_info.h"
 #include "esp_flash.h"
+#include "esp_task_wdt.h"
 #ifdef CONFIG_EXAMPLE_USE_CERT_BUNDLE
 #include "esp_crt_bundle.h"
 #endif
@@ -81,7 +82,7 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt)
 
 void hello_task(void *pvParameter)
 {
-    printf("Hello world V4!\n");
+    printf("Hello world V5!\n");
 
     /* Print chip information */
     esp_chip_info_t chip_info;
@@ -106,7 +107,10 @@ void hello_task(void *pvParameter)
 
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
-    while(1);
+    while(1)
+    {
+        esp_task_wdt_reset();
+    }
     /*
     for (int i = 10; i >= 0; i--) {
         printf("Restarting in %d seconds...\n", i);
