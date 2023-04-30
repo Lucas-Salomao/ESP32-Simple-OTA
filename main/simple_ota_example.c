@@ -109,7 +109,7 @@ void hello_task(void *pvParameter)
 
     while(1)
     {
-        esp_task_wdt_reset();
+        vTaskDelay(100 / portTICK_PERIOD_MS);
     }
     /*
     for (int i = 10; i >= 0; i--) {
@@ -247,7 +247,9 @@ void app_main(void)
     {
         xTaskCreate(&simple_ota_example_task, "ota_example_task", 8192, NULL, 5, NULL);
     }
-    xTaskCreate(&hello_task, "hello_task", 8192, NULL, 5, NULL);
-    
+    else
+    {
+        xTaskCreate(&hello_task, "hello_task", 8192, NULL, 5, NULL);
+    }
 
 }
