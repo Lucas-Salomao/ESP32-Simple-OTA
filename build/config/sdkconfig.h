@@ -227,7 +227,7 @@
 #define CONFIG_PARTITION_TABLE_FILENAME "partitions_two_ota.csv"
 #define CONFIG_PARTITION_TABLE_OFFSET 0x8000
 #define CONFIG_PARTITION_TABLE_MD5 1
-#define CONFIG_EXAMPLE_FIRMWARE_UPGRADE_URL "https://github.com/Lucas-Salomao/ESP32-OTA/raw/main/build/hello2.bin"
+#define CONFIG_EXAMPLE_FIRMWARE_UPGRADE_URL "https://github.com/Lucas-Salomao/ESP32-Simple-OTA/raw/main/build/simple_ota.bin"
 #define CONFIG_EXAMPLE_USE_CERT_BUNDLE 1
 #define CONFIG_ENV_GPIO_RANGE_MIN 0
 #define CONFIG_ENV_GPIO_RANGE_MAX 39
