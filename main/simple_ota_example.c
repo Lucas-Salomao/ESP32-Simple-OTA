@@ -81,7 +81,7 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt)
 
 void hello_task(void *pvParameter)
 {
-    printf("Hello world V2!\n");
+    printf("Hello world V3!\n");
 
     /* Print chip information */
     esp_chip_info_t chip_info;
@@ -106,13 +106,15 @@ void hello_task(void *pvParameter)
 
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
+    while(1);
+    /*
     for (int i = 10; i >= 0; i--) {
         printf("Restarting in %d seconds...\n", i);
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
     printf("Restarting now.\n");
     fflush(stdout);
-    esp_restart();
+    esp_restart();*/
 }
 void simple_ota_example_task(void *pvParameter)
 {
