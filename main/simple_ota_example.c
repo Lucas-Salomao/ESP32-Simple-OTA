@@ -237,7 +237,7 @@ void app_main(void)
     esp_wifi_set_ps(WIFI_PS_NONE);
 #endif // CONFIG_EXAMPLE_CONNECT_WIFI
 
-    if(gpio_get_level(GPIO_NUM_38))
+    if(!gpio_get_level(GPIO_NUM_38))
     {
         xTaskCreate(&simple_ota_example_task, "ota_example_task", 8192, NULL, 5, NULL);
     }
